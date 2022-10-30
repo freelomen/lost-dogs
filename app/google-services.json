@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "143315682453",
+    "firebase_url": "https://lost-dog-dd72d-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "lost-dog-dd72d",
+    "storage_bucket": "lost-dog-dd72d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143315682453:android:eb813843cc33c644fe479c",
+        "android_client_info": {
+          "package_name": "com.example.lostdog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143315682453-c5h4opg5jrbtchd9ciktbf6j262jp4ir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lostdog",
+            "certificate_hash": "047270e8f50b0bb85a7d4b526c8852855bb7f4fe"
+          }
+        },
+        {
+          "client_id": "143315682453-lmh0ee669t5qkbrn95q5tcn3de2m218k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsfUM-_M-prDBxkzmSPPJl_qXYg_vho-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143315682453-lmh0ee669t5qkbrn95q5tcn3de2m218k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
