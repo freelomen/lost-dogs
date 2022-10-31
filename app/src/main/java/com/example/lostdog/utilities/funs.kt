@@ -12,7 +12,6 @@ fun Fragment.showToast(message: String) {
 
 fun Fragment.replaceFragment(fragment: Fragment) {
     this.fragmentManager?.beginTransaction()
-        ?.addToBackStack(null)
         ?.replace(R.id.dataContainer,
             fragment
         )?.commit()
@@ -28,7 +27,6 @@ fun AppCompatActivity.replaceActivity(activity: AppCompatActivity) {
 
 fun AppCompatActivity.replaceFragment(fragment: Fragment) {
     supportFragmentManager.beginTransaction()
-        .addToBackStack(null)
         .replace(R.id.dataContainer,
             fragment
         ).commit()
