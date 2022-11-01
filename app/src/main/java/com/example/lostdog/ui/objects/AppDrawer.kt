@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.lostdog.R
 import com.example.lostdog.ui.fragments.HomeFragment
-import com.example.lostdog.ui.fragments.SettingsFragment
+import com.example.lostdog.ui.fragments.ProfileFragment
 import com.example.lostdog.utilities.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
-import com.mikepenz.materialdrawer.model.DividerDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
@@ -45,11 +44,6 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
                     .withName("Профиль")
                     .withSelectable(false),
                 ProfileDrawerItem()
-                    .withIdentifier(103)
-                    .withName("Настройки")
-                    .withSelectable(false),
-                DividerDrawerItem(),
-                ProfileDrawerItem()
                     .withIdentifier(104)
                     .withName("О приложении")
                     .withSelectable(false),
@@ -61,7 +55,7 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
                 ): Boolean {
                     when (position) {
                         1 -> mainActivity.replaceFragment(HomeFragment())
-                        4 -> mainActivity.replaceFragment(SettingsFragment())
+                        3 -> mainActivity.replaceFragment(ProfileFragment())
                     }
                     return false
                 }

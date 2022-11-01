@@ -1,23 +1,18 @@
 <resources>
     <string name="app_name">Lost Dog</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_register">RegisterActivity</string>
+    <string name="register_enter_code">Вход по СМС</string>
+    <string name="register_image_content_description">Картинка регистрации</string>
+    <string name="register_label_phone">Введите номер мобильного телефона мы отправим на него одноразовый код в СМС</string>
+    <string name="register_get_code">Получить код</string>
+    <string name="register_enter_verify_code">Введите одноразовый код из СМС</string>
 
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="profile_default_user_name">Anton Fedorov</string>
+    <string name="profile_text_account">Аккаунт</string>
+    <string name="profile_default_number_phone">+79273233621</string>
+    <string name="profile_label_phone_number">Нажмите чтобы изменить номер телефона</string>
+    <string name="profile_default_login">freelomen</string>
+    <string name="profile_label_login">Нажмите чтобы изменить логин</string>
+    <string name="profile_default_bio">О себе</string>
+    <string name="profile_label_bio">Напишите немного о себе</string>
 </resources>
