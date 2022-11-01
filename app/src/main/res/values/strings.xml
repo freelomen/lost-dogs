@@ -15,4 +15,6 @@
     <string name="profile_label_login">Нажмите чтобы изменить логин</string>
     <string name="profile_default_bio">О себе</string>
     <string name="profile_label_bio">Напишите немного о себе</string>
+    <string name="profile_menu_label_edit_username">Изменить имя</string>
+    <string name="profile_menu_label_exit">Выход</string>
 </resources>
