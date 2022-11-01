@@ -24,4 +24,5 @@
     <string name="profile_input_hint_name">Имя</string>
     <string name="profile_input_hint_surname">Фамилия</string>
     <string name="profile_input_hint_username">Короткое имя пользователя</string>
+    <string name="profile_input_hint_bio">О себе</string>
 </resources>

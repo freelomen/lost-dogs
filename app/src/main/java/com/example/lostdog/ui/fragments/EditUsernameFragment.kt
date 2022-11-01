@@ -1,38 +1,21 @@
 package com.example.lostdog.ui.fragments
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.fragment.app.Fragment
-import com.example.lostdog.MainActivity
 import com.example.lostdog.R
 import com.example.lostdog.utilities.*
-import kotlinx.android.synthetic.main.fragment_edit_name.*
 import kotlinx.android.synthetic.main.fragment_edit_username.*
 import java.util.*
 
-class EditUsernameFragment : BaseFragment(R.layout.fragment_edit_username) {
+class EditUsernameFragment : BaseEditFragment(R.layout.fragment_edit_username) {
 
-    lateinit var mNewUsername: String
+    private lateinit var mNewUsername: String
 
     override fun onResume() {
         super.onResume()
-        setHasOptionsMenu(true)
+
         profile_input_username.setText(USER.username)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.profile_action_menu_confirm, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.profile_confirm_change -> change()
-        }
-        return true
-    }
-
-    private fun change() {
+    override fun change() {
         mNewUsername = profile_input_username.text.toString().toLowerCase(Locale.getDefault())
 
         if (mNewUsername.isEmpty()) {

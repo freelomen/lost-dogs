@@ -27,6 +27,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         profile_user_full_name.text = USER.full_name
 
         profile_button_edit_username.setOnClickListener { replaceFragment(EditUsernameFragment()) }
+        profile_button_edit_bio.setOnClickListener { replaceFragment(EditBioFragment()) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
