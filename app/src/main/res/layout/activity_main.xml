@@ -13,14 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         style="@style/mainToolbar" />
 
-    <Button
-        android:id="@+id/main_button_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Выйти из аккаунта"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dataContainer"
         android:layout_width="match_parent"

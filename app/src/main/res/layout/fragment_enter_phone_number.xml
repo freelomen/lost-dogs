@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.EnterPhoneNumberFragment">
+    tools:context=".ui.fragments.EnterPhoneNumberFragment">
 
     <TextView
         android:id="@+id/register_label_sms"
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/register_enter_code"
         android:textSize="@dimen/largeText"
+        android:textStyle="bold"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/horizontal_margin"
@@ -33,39 +34,35 @@
         android:id="@+id/register_label_phone"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/vertical_margin"
         android:text="@string/register_label_phone"
-        android:textSize="@dimen/normalText"
-        android:textColor="@color/colorPrimary"
-        android:textAlignment="center"
+        style="@style/smallText"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_image" />
 
     <EditText
         android:id="@+id/register_input_phone_number"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/horizontal_margin"
-        android:layout_marginTop="@dimen/vertical_margin"
-        android:textColor="@color/colorPrimary"
-        android:autofillHints=""
-        android:inputType="phone"
-        android:maxLines="1"
-        android:minHeight="48dp"
+        android:layout_width="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_label_phone"
-        tools:ignore="LabelFor" />
+        style="@style/editText"
+        android:hint="@string/register_hint_phone"
+        android:autofillHints="" />
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/register_button_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/vertical_margin"
-        android:text="@string/register_get_code"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
         android:layout_marginEnd="@dimen/horizontal_margin"
-        app:layout_constraintTop_toBottomOf="@+id/register_input_phone_number" />
+        android:layout_marginBottom="@dimen/vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/register_get_code" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

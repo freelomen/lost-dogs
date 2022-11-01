@@ -11,23 +11,16 @@ fun Fragment.showToast(message: String) {
 }
 
 fun Fragment.replaceFragment(fragment: Fragment) {
-    this.fragmentManager?.beginTransaction()
-        ?.replace(R.id.dataContainer,
-            fragment
-        )?.commit()
+    this.fragmentManager?.beginTransaction()?.replace(R.id.dataContainer, fragment)
+        ?.addToBackStack(null)?.commit()
 }
 
 fun AppCompatActivity.replaceActivity(activity: AppCompatActivity) {
-    val intent = Intent(this,
-        activity::class.java
-    )
+    val intent = Intent(this, activity::class.java)
     startActivity(intent)
     this.finish()
 }
 
 fun AppCompatActivity.replaceFragment(fragment: Fragment) {
-    supportFragmentManager.beginTransaction()
-        .replace(R.id.dataContainer,
-            fragment
-        ).commit()
+    supportFragmentManager.beginTransaction().add(R.id.dataContainer, fragment).commit()
 }

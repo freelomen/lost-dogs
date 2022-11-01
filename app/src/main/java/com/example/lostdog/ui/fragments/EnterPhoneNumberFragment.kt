@@ -1,4 +1,4 @@
-package com.example.lostdog.fragments
+package com.example.lostdog.ui.fragments
 
 import androidx.fragment.app.Fragment
 import com.example.lostdog.MainActivity
@@ -43,6 +43,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
                 replaceFragment(EnterVerifyCodeFragment(mPhoneNumber, id))
             }
         }
+
         register_button_next.setOnClickListener { sendCode() }
     }
 
@@ -56,9 +57,11 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
 
     private fun authUser() {
         mPhoneNumber = register_input_phone_number.text.toString()
+
         val options = PhoneAuthOptions.newBuilder(FirebaseAuth.getInstance()).setPhoneNumber(mPhoneNumber)
             .setTimeout(60L, TimeUnit.SECONDS).setActivity(activity as RegisterActivity)
             .setCallbacks(mCallback).build()
+
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
 }

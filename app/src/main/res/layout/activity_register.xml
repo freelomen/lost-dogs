@@ -6,15 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".activities.RegisterActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/registerToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/mainToolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dataContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/registerToolbar">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

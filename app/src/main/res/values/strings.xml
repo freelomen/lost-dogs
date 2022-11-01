@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Lost Dog</string>
 
+    <string name="register">Аутентификация</string>
     <string name="register_enter_code">Вход по СМС</string>
     <string name="register_image_content_description">Картинка регистрации</string>
     <string name="register_label_phone">Введите номер мобильного телефона мы отправим на него одноразовый код в СМС</string>
@@ -17,4 +18,9 @@
     <string name="profile_label_bio">Напишите немного о себе</string>
     <string name="profile_menu_label_edit_username">Изменить имя</string>
     <string name="profile_menu_label_exit">Выход</string>
+    <string name="registerHintDefault">- - - - - -</string>
+    <string name="register_hint_phone">+79996661122</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_input_hint_name">Имя</string>
+    <string name="profile_input_hint_surname">Фамилия</string>
 </resources>
