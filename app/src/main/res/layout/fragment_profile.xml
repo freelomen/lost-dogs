@@ -28,12 +28,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/profile_full_name"
+            android:id="@+id/profile_user_full_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginEnd="@dimen/horizontal_margin"
-            android:text="@string/profile_default_user_name"
+            tools:text="@string/profile_default_user_name"
             android:textSize="@dimen/largeText"
             android:textColor="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="@+id/profile_user_photo"
@@ -73,7 +73,7 @@
 
         <TextView
             android:id="@+id/profile_user_phone_number"
-            android:text="@string/profile_default_number_phone"
+            tools:text="@string/profile_default_number_phone"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             style="@style/normalText" />
@@ -102,7 +102,7 @@
 
         <TextView
             android:id="@+id/profile_user_username"
-            android:text="@string/profile_default_login"
+            tools:text="@string/profile_default_login"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             style="@style/normalText" />
@@ -131,10 +131,12 @@
 
         <TextView
             android:id="@+id/profile_user_bio"
-            android:text="@string/profile_default_bio"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/normalText"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            style="@style/normalText" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/profile_default_bio" />
 
         <TextView
             android:id="@+id/profile_label_bio"
