@@ -32,7 +32,7 @@ class EditUsernameFragment : BaseEditFragment(R.layout.fragment_edit_username) {
     }
 
     private fun changeUsername() {
-        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(mNewUsername).setValue(UID)
+        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(mNewUsername).setValue(CURRENT_UID)
             .addOnCompleteListener {
                 if (it.isSuccessful)
                     updateCurrentUsername()
@@ -40,7 +40,7 @@ class EditUsernameFragment : BaseEditFragment(R.layout.fragment_edit_username) {
     }
 
     private fun updateCurrentUsername() {
-        REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_USERNAME).setValue(mNewUsername)
+        REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME).setValue(mNewUsername)
             .addOnCompleteListener {
                 if (it.isSuccessful)
                     deleteOldUsername()

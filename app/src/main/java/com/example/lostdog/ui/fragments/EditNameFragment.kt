@@ -31,13 +31,12 @@ class EditNameFragment : BaseEditFragment(R.layout.fragment_edit_name) {
         } else {
             val fullName = "$name $surname"
 
-            REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_FULL_NAME).setValue(fullName)
+            REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_FULL_NAME).setValue(fullName)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
                         showToast("Данные добавлены")
-
                         USER.full_name = fullName
-
+                        APP_ACTIVITY.mAppDrawer.updateHeader()
                         replaceFragment(ProfileFragment())
                     }
                 }

@@ -6,6 +6,8 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.example.lostdog.MainActivity
 import com.example.lostdog.R
+import com.example.lostdog.utilities.APP_ACTIVITY
+import com.example.lostdog.utilities.hiddenKeyboard
 
 open class BaseEditFragment(layout: Int) : Fragment(layout) {
 
@@ -13,6 +15,7 @@ open class BaseEditFragment(layout: Int) : Fragment(layout) {
         super.onStart()
 
         setHasOptionsMenu(true)
+        hiddenKeyboard()
     }
 
     override fun onStop() {
