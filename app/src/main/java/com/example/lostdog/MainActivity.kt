@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
 
-            replaceFragment(HomeFragment())
+            replaceFragment(HomeFragment(), false)
         } else
             replaceActivity(RegisterActivity())
     }
@@ -48,5 +48,17 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        AppStates.updateStates(AppStates.ONLINE)
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        AppStates.updateStates(AppStates.OFFLINE)
     }
 }

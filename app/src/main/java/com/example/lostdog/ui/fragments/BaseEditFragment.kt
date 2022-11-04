@@ -15,6 +15,7 @@ open class BaseEditFragment(layout: Int) : Fragment(layout) {
         super.onStart()
 
         setHasOptionsMenu(true)
+        APP_ACTIVITY.mAppDrawer.disableDrawer()
         hiddenKeyboard()
     }
 
@@ -23,7 +24,7 @@ open class BaseEditFragment(layout: Int) : Fragment(layout) {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.profile_action_menu_confirm, menu)
+        APP_ACTIVITY.menuInflater.inflate(R.menu.profile_action_menu_confirm, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

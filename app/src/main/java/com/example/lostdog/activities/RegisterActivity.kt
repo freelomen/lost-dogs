@@ -16,6 +16,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         mBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
         initFirebase()
@@ -23,6 +24,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
         mToolbar = mBinding.registerToolbar
         setSupportActionBar(mToolbar)
         title = getString(R.string.register)

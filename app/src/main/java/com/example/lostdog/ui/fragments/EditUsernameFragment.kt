@@ -18,9 +18,9 @@ class EditUsernameFragment : BaseEditFragment(R.layout.fragment_edit_username) {
     override fun change() {
         mNewUsername = profile_input_username.text.toString().toLowerCase(Locale.getDefault())
 
-        if (mNewUsername.isEmpty()) {
+        if (mNewUsername.isEmpty())
             showToast("Имя пользователя не может быть пустым")
-        } else {
+        else {
             REF_DATABASE_ROOT.child(NODE_USERNAMES)
                 .addListenerForSingleValueEvent(AppValueEventListener {
                     if (it.hasChild(mNewUsername))
@@ -53,9 +53,9 @@ class EditUsernameFragment : BaseEditFragment(R.layout.fragment_edit_username) {
         REF_DATABASE_ROOT.child(NODE_USERNAMES).child(USER.username).removeValue()
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    showToast("Данные добавлены")
+                    showToast(getString(R.string.toast_data_update))
                     USER.username = mNewUsername
-                    replaceFragment(ProfileFragment())
+                    fragmentManager?.popBackStack()
                 } else
                     showToast(it.exception?.message.toString())
             }

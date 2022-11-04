@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.lostdog.R
 import com.example.lostdog.ui.fragments.HomeFragment
 import com.example.lostdog.ui.fragments.ProfileFragment
@@ -23,6 +24,7 @@ import com.mikepenz.materialdrawer.util.DrawerImageLoader
 
 class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
     private lateinit var mDrawer: Drawer
+    private lateinit var mDrawerLayout: DrawerLayout
     private lateinit var mHeader: AccountHeader
     private lateinit var mCurrentProfile: ProfileDrawerItem
 
@@ -30,6 +32,26 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
         initLoader()
         createHeader()
         createDrawer()
+
+        mDrawerLayout = mDrawer.drawerLayout
+    }
+
+    fun enableDrawer() {
+        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
+        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+        toolbar.setNavigationOnClickListener {
+            mDrawer.openDrawer()
+        }
+    }
+
+    fun disableDrawer() {
+        mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
+        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        toolbar.setNavigationOnClickListener {
+            mainActivity.supportFragmentManager.popBackStack()
+        }
     }
 
     private fun createDrawer() {

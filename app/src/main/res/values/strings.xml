@@ -25,4 +25,6 @@
     <string name="profile_input_hint_surname">Фамилия</string>
     <string name="profile_input_hint_username">Короткое имя пользователя</string>
     <string name="profile_input_hint_bio">О себе</string>
+    <string name="toast_data_update">Данные обновлены</string>
+    <string name="profile_toast_name_is_empty">Имя не может быть пустым</string>
 </resources>

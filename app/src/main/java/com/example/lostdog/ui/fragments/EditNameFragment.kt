@@ -26,18 +26,19 @@ class EditNameFragment : BaseEditFragment(R.layout.fragment_edit_name) {
         val name = profile_input_name.text.toString()
         val surname = profile_input_surname.text.toString()
 
-        if (name.isEmpty()) {
-            showToast("Имя не может быть пустым")
-        } else {
+        if (name.isEmpty())
+            showToast(getString(R.string.profile_toast_name_is_empty))
+        else {
             val fullName = "$name $surname"
 
             REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_FULL_NAME).setValue(fullName)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                        showToast("Данные добавлены")
+                        showToast(getString(R.string.toast_data_update))
                         USER.full_name = fullName
                         APP_ACTIVITY.mAppDrawer.updateHeader()
-                        replaceFragment(ProfileFragment())
+
+                        fragmentManager?.popBackStack()
                     }
                 }
         }

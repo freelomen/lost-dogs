@@ -16,15 +16,12 @@ class EditBioFragment : BaseEditFragment(R.layout.fragment_edit_bio) {
         super.change()
 
         val bio = profile_input_bio.text.toString()
-
         REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_BIO).setValue(bio)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    showToast("Данные обновлены")
-
+                    showToast(getString(R.string.toast_data_update))
                     USER.bio = bio
-
-                    replaceFragment(ProfileFragment())
+                    fragmentManager?.popBackStack()
                 }
             }
     }

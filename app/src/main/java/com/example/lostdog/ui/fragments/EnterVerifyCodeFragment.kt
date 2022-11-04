@@ -32,7 +32,7 @@ class EnterVerifyCodeFragment(val phoneNumber: String, val id: String) :
                 val dateMap = mutableMapOf<String, Any>()
                 dateMap[CHILD_ID] = uid
                 dateMap[CHILD_PHONE] = phoneNumber
-                dateMap[CHILD_USERNAME] = uid
+//                dateMap[CHILD_USERNAME] = uid
 
                 REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
                     .addOnCompleteListener() { task2 ->
