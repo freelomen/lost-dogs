@@ -51,7 +51,7 @@
         android:layout_marginTop="@dimen/vertical_large_margin"
         android:text="@string/profile_text_account"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/normalText"
+        android:textSize="@dimen/smallText"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

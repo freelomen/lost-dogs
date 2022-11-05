@@ -19,6 +19,8 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
     override fun onResume() {
         super.onResume()
+
+        APP_ACTIVITY.title = getString(R.string.profile_fragment_title)
         setHasOptionsMenu(true)
         initFields()
     }
@@ -47,6 +49,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.profile_menu_exit_username -> {
+                AppStates.updateStates(AppStates.OFFLINE)
                 AUTH.signOut()
                 APP_ACTIVITY.replaceActivity(RegisterActivity())
             }

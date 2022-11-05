@@ -31,9 +31,12 @@ fun AppCompatActivity.replaceFragment(fragment: Fragment, addStack: Boolean = tr
         supportFragmentManager.beginTransaction().replace(R.id.dataContainer, fragment).commit()
 }
 
-fun Fragment.replaceFragment(fragment: Fragment) {
-    this.fragmentManager?.beginTransaction()?.addToBackStack(null)
-        ?.replace(R.id.dataContainer, fragment)?.commit()
+fun Fragment.replaceFragment(fragment: Fragment, addStack: Boolean = true) {
+    if (addStack)
+        this.fragmentManager?.beginTransaction()?.addToBackStack(null)
+            ?.replace(R.id.dataContainer, fragment)?.commit()
+    else
+        this.fragmentManager?.beginTransaction()?.replace(R.id.dataContainer, fragment)?.commit()
 }
 
 fun hiddenKeyboard() {

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.NewPostFragment">
+
+    <TextView
+        android:id="@+id/new_post_label_title"
+        android:text="@string/new_post_label_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/new_post_label" />
+
+    <EditText
+        android:id="@+id/new_post_input_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/editText"
+        android:inputType="text"
+        android:hint="@string/new_post_input_title_hint"
+        app:layout_constraintTop_toBottomOf="@+id/new_post_label_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/new_post_label_description"
+        android:text="@string/new_post_label_description"
+        android:layout_marginTop="@dimen/vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/new_post_input_title"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/new_post_label" />
+
+    <EditText
+        android:id="@+id/new_post_input_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="5"
+        style="@style/editText"
+        android:inputType="text"
+        android:hint="@string/new_post_input_description_hint"
+        app:layout_constraintTop_toBottomOf="@+id/new_post_label_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

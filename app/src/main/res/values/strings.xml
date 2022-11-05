@@ -27,4 +27,16 @@
     <string name="profile_input_hint_bio">О себе</string>
     <string name="toast_data_update">Данные обновлены</string>
     <string name="profile_toast_name_is_empty">Имя не может быть пустым</string>
+    <string name="home_fragment_title">Главная</string>
+    <string name="profile_fragment_title">Профиль</string>
+    <string name="user_post_fragment_title">Мои посты</string>
+    <string name="new_post_fragment_title">Создать пост</string>
+    <string name="new_post_label_title">Заголовок</string>
+    <string name="new_post_input_title_hint">Пропала собака</string>
+    <string name="new_post_label_description">Описание</string>
+    <string name="new_post_input_description_hint">Черный окрас, низкая</string>
+    <string name="new_post_label_photo">Фото</string>
+    <string name="new_post_input_title_empty">Заголовок не может быть пустым</string>
+    <string name="new_post_input_description_empty">Описание не может быть пустым</string>
+    <string name="new_post_photo_fragment_title">Добавить фото</string>
 </resources>

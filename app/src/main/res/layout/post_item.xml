@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/profileButtons">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/post_photo"
+        android:layout_width="@dimen/profile_user_photo_width"
+        android:layout_height="@dimen/profile_user_photo_height"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginBottom="@dimen/vertical_margin"
+        android:src="@drawable/default_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/post_title"
+        style="@style/normalText"
+        app:layout_constraintStart_toEndOf="@+id/post_photo"
+        app:layout_constraintTop_toTopOf="@+id/post_photo"
+        tools:text="Заголовок" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
