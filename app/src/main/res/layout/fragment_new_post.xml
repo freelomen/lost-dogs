@@ -46,4 +46,31 @@
         app:layout_constraintStart_toStartOf="parent"
         android:autofillHints="" />
 
+    <TextView
+        android:id="@+id/new_post_label_photo"
+        android:text="@string/new_post_label_photo"
+        app:layout_constraintTop_toBottomOf="@+id/new_post_input_description"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/new_post_label" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/new_post_photo"
+        android:layout_width="@dimen/new_post_photo_width"
+        android:layout_height="@dimen/new_post_photo_height"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:src="@drawable/default_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/new_post_label_photo" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/new_post_photo_add"
+        android:layout_width="@dimen/new_post_photo_add_width"
+        android:layout_height="@dimen/new_post_photo_add_height"
+        android:src="@drawable/ic_add_orange"
+        android:layout_marginTop="@dimen/vertical_margin"
+        app:layout_constraintEnd_toEndOf="@+id/new_post_photo"
+        app:layout_constraintStart_toStartOf="@+id/new_post_photo"
+        app:layout_constraintTop_toBottomOf="@+id/new_post_photo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

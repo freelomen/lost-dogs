@@ -39,4 +39,10 @@
     <string name="new_post_input_title_empty">Заголовок не может быть пустым</string>
     <string name="new_post_input_description_empty">Описание не может быть пустым</string>
     <string name="new_post_photo_fragment_title">Добавить фото</string>
+    <string name="new_post_photo_add">Фото добавлено</string>
+    <string name="new_post_add">Запись добавленна</string>
+    <string name="toolbar_info_title">Заголовок</string>
+    <string name="single_post_description">Белая собачка, красный ошейник и т.л. и т.д. ...</string>
+    <string name="single_post_menu_delete">Удалить</string>
+    <string name="single_post_menu_edit">Изменить</string>
 </resources>

@@ -6,5 +6,6 @@ data class PostModel (
     var description: String = "",
     var photo_url: String = "empty",
     var address: String = "",
-    val state: String = ""
+    val state: String = "",
+    val author: String = ""
 )

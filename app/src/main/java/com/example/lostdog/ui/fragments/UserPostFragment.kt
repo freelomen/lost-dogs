@@ -20,6 +20,8 @@ class UserPostFragment : BaseFragment(R.layout.fragment_user_post) {
     private lateinit var mAdapter: FirebaseRecyclerAdapter<CommonModel, UserPostsHolder>
     private lateinit var mRefUserPosts: DatabaseReference
     private lateinit var mRefPosts: DatabaseReference
+    private lateinit var mRefPostsListener: AppValueEventListener
+    private var mapListeners = hashMapOf<DatabaseReference, AppValueEventListener>()
 
     override fun onResume() {
         super.onResume()
@@ -51,12 +53,18 @@ class UserPostFragment : BaseFragment(R.layout.fragment_user_post) {
             ) {
                 mRefPosts = REF_DATABASE_ROOT.child(NODE_POSTS).child(model.id)
 
-                mRefPosts.addValueEventListener(AppValueEventListener {
+                mRefPostsListener = AppValueEventListener {
                     val post = it.getValue(PostModel::class.java) ?: PostModel()
 
                     holder.title.text = post.title
                     holder.photo.downloadAndSetImage(post.photo_url)
-                })
+
+                    holder.itemView.setOnClickListener { replaceFragment(SinglePostFragment(post)) }
+                }
+
+                mRefPosts.addValueEventListener(mRefPostsListener)
+
+                mapListeners[mRefPosts] = mRefPostsListener
             }
         }
 
@@ -85,6 +93,10 @@ class UserPostFragment : BaseFragment(R.layout.fragment_user_post) {
         super.onPause()
 
         mAdapter.stopListening()
+
+        mapListeners.forEach {
+            it.key.removeEventListener(it.value)
+        }
     }
 
 }

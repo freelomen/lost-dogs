@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lostdog.R
 import com.example.lostdog.models.PostModel
-import com.example.lostdog.utilities.APP_ACTIVITY
-import com.example.lostdog.utilities.NODE_POSTS
-import com.example.lostdog.utilities.REF_DATABASE_ROOT
-import com.example.lostdog.utilities.downloadAndSetImage
+import com.example.lostdog.utilities.*
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.DatabaseReference
@@ -54,6 +51,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             ) {
                 holder.title.text = model.title
                 holder.photo.downloadAndSetImage(model.photo_url)
+
+                holder.itemView.setOnClickListener { replaceFragment(SinglePostFragment(model)) }
             }
         }
 
