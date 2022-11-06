@@ -45,4 +45,12 @@
     <string name="single_post_description">Белая собачка, красный ошейник и т.л. и т.д. ...</string>
     <string name="single_post_menu_delete">Удалить</string>
     <string name="single_post_menu_edit">Изменить</string>
+    <string name="edit_single_post_fragment_title">Изменить пост</string>
+    <string name="edit_single_post_label_title">Заголовок</string>
+    <string name="edit_single_post_input_title_hint">Пропала собака</string>
+    <string name="edit_single_post_label_description">Описание</string>
+    <string name="edit_single_post_input_description_hint">Окрас черный, белый ошейник</string>
+    <string name="edit_single_post_label_photo">Фото</string>
+    <string name="edit_single_post_fragment_photo_update">Фото обновлено</string>
+    <string name="edit_single_post_fragment_post_update">Пост изменен</string>
 </resources>

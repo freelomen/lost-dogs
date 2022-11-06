@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.EditSinglePostFragment">
+
+    <TextView
+        android:id="@+id/edit_single_post_label_title"
+        style="@style/smallText"
+        android:text="@string/edit_single_post_label_title"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/vertical_large_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/edit_single_post_input_title"
+        style="@style/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_single_post_input_title_hint"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/edit_single_post_label_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/edit_single_post_label_description"
+        style="@style/smallText"
+        android:text="@string/edit_single_post_label_description"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/edit_single_post_input_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/edit_single_post_input_description"
+        style="@style/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_single_post_input_description_hint"
+        android:inputType="text"
+        android:maxLines="5"
+        app:layout_constraintTop_toBottomOf="@+id/edit_single_post_label_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/edit_single_post_label_photo"
+        style="@style/smallText"
+        android:text="@string/edit_single_post_label_photo"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/edit_single_post_input_description"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/edit_single_post_photo"
+        android:layout_width="@dimen/new_post_photo_width"
+        android:layout_height="@dimen/new_post_photo_height"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:src="@drawable/default_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_single_post_label_photo" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/edit_single_post_photo_add"
+        android:layout_width="@dimen/new_post_photo_add_width"
+        android:layout_height="@dimen/new_post_photo_add_height"
+        android:src="@drawable/ic_add_orange"
+        android:layout_marginTop="@dimen/vertical_margin"
+        app:layout_constraintEnd_toEndOf="@+id/edit_single_post_photo"
+        app:layout_constraintStart_toStartOf="@+id/edit_single_post_photo"
+        app:layout_constraintTop_toBottomOf="@+id/edit_single_post_photo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

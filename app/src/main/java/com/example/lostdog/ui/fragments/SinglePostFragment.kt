@@ -5,7 +5,6 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import com.example.lostdog.R
-import com.example.lostdog.activities.RegisterActivity
 import com.example.lostdog.models.PostModel
 import com.example.lostdog.utilities.*
 import com.google.firebase.database.DatabaseReference
@@ -16,7 +15,7 @@ import kotlinx.android.synthetic.main.toolbar_info.view.*
 class SinglePostFragment(private val model: PostModel) : BaseFragment(R.layout.fragment_single_post) {
 
     private lateinit var mListenerInfoToolbar: AppValueEventListener
-    private lateinit var mPost: PostModel
+    lateinit var mPost: PostModel
     private lateinit var mToolbarInfo: View
     private lateinit var mRefPost: DatabaseReference
 
@@ -54,8 +53,8 @@ class SinglePostFragment(private val model: PostModel) : BaseFragment(R.layout.f
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.single_post_menu_edit -> replaceFragment(EditSinglePostFragment(mPost))
             R.id.single_post_menu_delete -> showToast("Скоро будет возможность удалить")
-            R.id.single_post_menu_edit -> showToast("Скоро будет возможность изменить")
         }
 
         return true
