@@ -53,4 +53,5 @@
     <string name="edit_single_post_label_photo">Фото</string>
     <string name="edit_single_post_fragment_photo_update">Фото обновлено</string>
     <string name="edit_single_post_fragment_post_update">Пост изменен</string>
+    <string name="single_post_delete">Пост удален</string>
 </resources>

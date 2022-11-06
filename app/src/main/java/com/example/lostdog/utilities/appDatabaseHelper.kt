@@ -1,10 +1,8 @@
 package com.example.lostdog.utilities
 
 import android.net.Uri
-import com.example.lostdog.models.CommonModel
 import com.example.lostdog.models.UserModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ServerValue
@@ -97,5 +95,20 @@ fun addNewPost(title: String, description: String, postKey: String, function: ()
 
     mapUserPost[CHILD_ID] = postKey
 
-    REF_DATABASE_ROOT.child(NODE_POSTS_USERS).child(CURRENT_UID).child(postKey).updateChildren(mapUserPost)
+    REF_DATABASE_ROOT.child(NODE_POSTS_USERS).child(CURRENT_UID).child(postKey)
+        .updateChildren(mapUserPost)
+}
+
+fun deletePost(id: String, function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_POSTS).child(id).removeValue()
+        .addOnFailureListener { showToast(it.message.toString()) }
+        .addOnSuccessListener {
+            REF_DATABASE_ROOT.child(NODE_POSTS_USERS).child(CURRENT_UID).child(id).removeValue()
+                .addOnFailureListener { showToast(it.message.toString()) }
+                .addOnSuccessListener {
+                    REF_STORAGE_ROOT.child(FOLDER_POST_IMAGE).child(id).delete()
+                        .addOnFailureListener { showToast(it.message.toString()) }
+                        .addOnSuccessListener { function() }
+                }
+        }
 }

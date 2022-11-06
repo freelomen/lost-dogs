@@ -47,6 +47,10 @@ class SinglePostFragment(private val model: PostModel) : BaseFragment(R.layout.f
         single_post_description.text = mPost.description
     }
 
+    private fun initInfoToolbar() {
+        mToolbarInfo.toolbar_info_title.text = mPost.title
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         activity?.menuInflater?.inflate(R.menu.single_post_action_menu, menu)
     }
@@ -54,14 +58,13 @@ class SinglePostFragment(private val model: PostModel) : BaseFragment(R.layout.f
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.single_post_menu_edit -> replaceFragment(EditSinglePostFragment(mPost))
-            R.id.single_post_menu_delete -> showToast("Скоро будет возможность удалить")
+            R.id.single_post_menu_delete -> deletePost(mPost.id) {
+                showToast(getString(R.string.single_post_delete))
+                replaceFragment(HomeFragment())
+            }
         }
 
         return true
-    }
-
-    private fun initInfoToolbar() {
-        mToolbarInfo.toolbar_info_title.text = mPost.title
     }
 
     override fun onPause() {
